@@ -2,11 +2,14 @@ const express = require('express');
 const app = express();
 const port = 5000;
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
 require('dotenv/config');
 
 //Import Routes
 const userRoute = require('./Routes/Users');
 
+app.use(bodyParser.json());
 // router use by middleware
 
 app.use('/users',userRoute);
