@@ -1,0 +1,23 @@
+{
+  "name": "rest-api-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ruhulcse/REST-API-Nodejs.git"
+  },
+  "author": "Ruhul Amin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ruhulcse/REST-API-Nodejs/issues"
+  },
+  "homepage": "https://github.com/Ruhulcse/REST-API-Nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  }
+}
