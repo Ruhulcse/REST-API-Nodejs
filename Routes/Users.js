@@ -41,4 +41,29 @@ router.get('/:postId',async(req,res) => {
         res.json({message: error});
     }
 })
+
+// Delete a User by id
+router.delete('/:postId',async(req,res) => {
+    try {
+        const user = await User.remove({_id : req.params.postId});
+        res.json(user);
+    } catch (error) {
+        res.json({message: error});
+    }
+})
+
+//Update a single user
+router.patch('/:postId', async(req,res) => {
+    console.log("requested");
+    console.log(req.params.postId);
+    try {
+        const UpdatePost = await User.updateOne(
+            {_id : req.params.postId},
+            {$set : {password : req.body.password}}
+        );
+        res.json(UpdatePost);
+    } catch (error) {
+        res.json({message : error});
+    }
+})
 module.exports = router;
