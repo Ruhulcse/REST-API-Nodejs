@@ -4,6 +4,13 @@ const port = 5000;
 const mongoose = require('mongoose');
 require('dotenv/config');
 
+//Import Routes
+const userRoute = require('./Routes/Users');
+
+// router use by middleware
+
+app.use('/users',userRoute);
+
 //ROUTES
 app.get('/',(req,res) => {
     res.send("home secreen");
@@ -11,7 +18,6 @@ app.get('/',(req,res) => {
 
 
 //Connect To DB
-
 mongoose.connect(
     process.env.DB_CONNECTION,
     { useNewUrlParser: true ,
@@ -19,6 +25,7 @@ mongoose.connect(
     },
     ()=>console.log("Connected to DB")
 );
+
 //Listening server
 app.listen(port, ()=> {
     console.log("app is listening");
